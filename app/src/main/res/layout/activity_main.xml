@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:background="#f23a6eb1"
         android:layout_height="match_parent"
-        tools:context=".activity.MainActivity">
+        tools:context=".activity.MainActivity2">
 
 
     <ir.sajjadyosefi.kartsokhtcafebaazar.view.PersianTextView
@@ -20,23 +20,24 @@
             android:text="نوع استعلام را انتخاب کنید" />
 
     <RelativeLayout
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/textView4"
             android:gravity="center"
-            tools:context=".activity.MainActivity">
+            tools:context=".activity.MainActivity2">
 
 
         <LinearLayout
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content" >
             <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:layout_height="wrap_content">
                 <ImageButton
@@ -70,8 +71,9 @@
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
                     android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content">
                 <ImageButton
                         android:layout_width="100dp"
