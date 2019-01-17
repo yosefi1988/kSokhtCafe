@@ -3,6 +3,7 @@ package ir.sajjadyosefi.kartsokhtcafebaazar.async;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
+import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 import ir.sajjadyosefi.kartsokhtcafebaazar.model.Message;
 import ir.sajjadyosefi.kartsokhtcafebaazar.model.response.MessageResponse;
 import ir.sajjadyosefi.kartsokhtcafebaazar.networkLayout.RestApiHelper;
@@ -12,12 +13,14 @@ import ir.sajjadyosefi.kartsokhtcafebaazar.utility.CommonClass;
  * Created by Other on 10/23/2016.
  */
 public class AsyncSendMessage extends AsyncTask {
+    private static DilatingDotsProgressBar PBSjd;
     private final Context mContext;
     private final Message mMessage;
 
-    public AsyncSendMessage(Context context, Message message) {
+    public AsyncSendMessage(Context context, DilatingDotsProgressBar PBSjd, Message message) {
         this.mContext = context;
         this.mMessage = message;
+        this.PBSjd = PBSjd ;
     }
 
     @Override
@@ -54,5 +57,6 @@ public class AsyncSendMessage extends AsyncTask {
 //            Toast.makeText(mContext,registerResponse.getUser().getUserName(), Toast.LENGTH_SHORT).show();
         }
 
+        PBSjd.hide();
      }
 }

@@ -2,13 +2,14 @@ package ir.sajjadyosefi.kartsokhtcafebaazar.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,8 +58,13 @@ public class FragmentMelli extends Fragment {
 
     }
 
-    public FragmentMelli(Context context) {
-        this.mContext = context;
+    public static FragmentMelli newInstance() {
+        FragmentMelli fragmentDemo = new FragmentMelli();
+        Bundle args = new Bundle();
+//        args.putInt("someInt", someInt);
+//        args.putString("someTitle", someTitle);
+        fragmentDemo.setArguments(args);
+        return fragmentDemo;
     }
 
 
@@ -70,7 +76,7 @@ public class FragmentMelli extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_melli, container, false);
-
+        mContext = getContext();
 
 
 
@@ -80,7 +86,6 @@ public class FragmentMelli extends Fragment {
         editText3 = (EditText) view.findViewById(R.id.editText3);
         PBSjd = (DilatingDotsProgressBar) view.findViewById(R.id.PBSjd);
         button = (Button) view.findViewById(R.id.button);
-        buttonContactUS = (Button) view.findViewById(R.id.buttonContactUS);
         listView = (Spinner) view.findViewById(R.id.spinner2);
 
 
@@ -98,7 +103,6 @@ public class FragmentMelli extends Fragment {
                 selectedChar = 0;
             }
         });
-
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -264,10 +268,10 @@ public class FragmentMelli extends Fragment {
 
         payment.setMerchantID("e8a913e8-f089-11e6-8dec-005056a205be");
         if (goToVip){
-            payment.setAmount(10000);
+            payment.setAmount(100);
             goToVipValue = true ;
         }else {
-            payment.setAmount(500);
+            payment.setAmount(100);
             goToVipValue = false;
         }
         payment.setDescription("هزینه استعلام کارت سوخت");

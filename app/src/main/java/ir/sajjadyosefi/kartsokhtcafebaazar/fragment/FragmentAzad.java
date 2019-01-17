@@ -53,9 +53,16 @@ public class FragmentAzad extends Fragment {
 
     }
 
-    public FragmentAzad(Context context) {
-        this.mContext = context;
+
+    public static FragmentAzad newInstance() {
+        FragmentAzad fragmentDemo = new FragmentAzad();
+        Bundle args = new Bundle();
+//        args.putInt("someInt", someInt);
+//        args.putString("someTitle", someTitle);
+        fragmentDemo.setArguments(args);
+        return fragmentDemo;
     }
+
 
 
     @Override
@@ -66,13 +73,13 @@ public class FragmentAzad extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_azad, container, false);
+        mContext = getContext();
 
 
         editText1 = (EditText) view.findViewById(R.id.editText1);
         PBSjd = (DilatingDotsProgressBar) view.findViewById(R.id.PBSjd);
         editText1 = (EditText) view.findViewById(R.id.editText1);
         button = (Button) view.findViewById(R.id.button);
-        buttonContactUS = (Button) view.findViewById(R.id.buttonContactUS);
         listView = (Spinner) view.findViewById(R.id.spinner2);
 
 
@@ -194,10 +201,10 @@ public class FragmentAzad extends Fragment {
 
         payment.setMerchantID("e8a913e8-f089-11e6-8dec-005056a205be");
         if (goToVip){
-            payment.setAmount(10000);
+            payment.setAmount(100);
             goToVipValue = true ;
         }else {
-            payment.setAmount(500);
+            payment.setAmount(100);
             goToVipValue = false;
         }
         payment.setDescription("هزینه استعلام کارت سوخت");

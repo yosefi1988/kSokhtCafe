@@ -211,7 +211,7 @@
                     android:gravity="right"
                     android:padding="5dp"
                     android:text="@string/radio1Text"
-                    android:textColor="#f82d2b2b"
+                    android:textColor="#fff"
                     android:textSize="17dp"
                     android:textStyle="bold" />
 
@@ -280,7 +280,7 @@
                         android:visibility="gone"
                         android:orientation="horizontal">
 
-                        <ir.sajjadyosefi.kartsokhtcafebaazar.view.ButtonPlus
+                        <ir.sajjadyosefi.kartsokhtcafebaazar.view.PersianTextView
                             android:id="@+id/tvField2"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -380,6 +380,20 @@
 
     </FrameLayout>
 
+
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+            android:id="@+id/PBSjd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:color="#5da2e7"
+            android:layout_centerInParent="true"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:radius="5dp"
+            app:dd_animationDuration="900"
+            app:dd_horizontalSpacing="8dp"
+            app:dd_numDots="5"
+            app:dd_scaleMultiplier="3" />
 
 </RelativeLayout>
 

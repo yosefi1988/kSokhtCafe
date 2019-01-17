@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 import ir.sajjadyosefi.kartsokhtcafebaazar.R;
 import ir.sajjadyosefi.kartsokhtcafebaazar.async.AsyncSendMessage;
 import ir.sajjadyosefi.kartsokhtcafebaazar.model.Message;
@@ -26,6 +27,7 @@ public class FragmentContactUs extends Fragment {
     public static final int ORDER_APP               = 6;
     public static final int SUGGESTION              = 7;
     public static int messageType = 0;
+    DilatingDotsProgressBar PBSjd ;
 
 
     Context context;
@@ -45,9 +47,16 @@ public class FragmentContactUs extends Fragment {
 
     }
 
-    public FragmentContactUs(Context context) {
-        this.context = context;
+
+    public static FragmentContactUs newInstance() {
+        FragmentContactUs fragmentDemo = new FragmentContactUs();
+        Bundle args = new Bundle();
+//        args.putInt("someInt", someInt);
+//        args.putString("someTitle", someTitle);
+        fragmentDemo.setArguments(args);
+        return fragmentDemo;
     }
+
 
 
     @Override
@@ -58,6 +67,8 @@ public class FragmentContactUs extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_contactus, container, false);
+        context = getContext();
+
 
 
 
@@ -76,6 +87,7 @@ public class FragmentContactUs extends Fragment {
         tvField2 = (PersianTextView) view.findViewById(R.id.tvField2);
         tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         svScroll = (ScrollView) view.findViewById(R.id.svScroll);
+        PBSjd = (DilatingDotsProgressBar) view.findViewById(R.id.PBSjd);
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +113,9 @@ public class FragmentContactUs extends Fragment {
                         }
                     }
                     message.setType(messageType + "");
-                    AsyncSendMessage asyncSendMessage = new AsyncSendMessage(context,message);
+                    PBSjd.show();
+
+                    AsyncSendMessage asyncSendMessage = new AsyncSendMessage(context,PBSjd,message);
                     asyncSendMessage.execute();
                 }else
                     Toast.makeText(context,context.getString(R.string.notCorrectInput),Toast.LENGTH_LONG).show();

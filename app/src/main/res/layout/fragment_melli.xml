@@ -155,19 +155,6 @@
             android:textSize="25dp" />
 
 
-
-        <ir.sajjadyosefi.kartsokhtcafebaazar.view.ButtonPlus
-            android:id="@+id/buttonContactUS"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/twitter"
-            android:text="تماس با ما"
-            android:textColor="#fff"
-            android:textSize="25dp" />
-
     </LinearLayout>
 
 

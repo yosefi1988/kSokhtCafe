@@ -14,6 +14,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" ></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:scheme="return" android:host="zarinpalpayment"></data>
+            </intent-filter>
         </activity>
 
         <activity android:name=".activity.Splash_Screen">
