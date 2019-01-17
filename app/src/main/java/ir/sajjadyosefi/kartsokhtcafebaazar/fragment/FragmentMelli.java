@@ -21,6 +21,7 @@ import com.zarinpal.ewallets.purchase.PaymentRequest;
 import com.zarinpal.ewallets.purchase.ZarinPal;
 import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 import ir.sajjadyosefi.kartsokhtcafebaazar.R;
+import ir.sajjadyosefi.kartsokhtcafebaazar.activity.ContainerActivity;
 import ir.sajjadyosefi.kartsokhtcafebaazar.activity.MainActivity;
 import ir.sajjadyosefi.kartsokhtcafebaazar.activity.ResultActivity;
 import ir.sajjadyosefi.kartsokhtcafebaazar.adapter.SpinnerAdapterA;
@@ -191,7 +192,7 @@ public class FragmentMelli extends Fragment {
                     error = false;
 
                     if (goToVipValue){
-                        ((MainActivity)mContext).saveVip(true);
+                        ((ContainerActivity)mContext).saveVip(true);
                     }
                     //payment ok
                     //refID

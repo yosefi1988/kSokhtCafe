@@ -97,7 +97,7 @@ public class FragmentContactUs extends Fragment {
                     Message message = new Message();
                     message.setApplicationID(17);
                     message.setPhoneNumber(etField1.getText().toString());
-                    message.setText(etField3.getText().toString());
+                    message.setText(message.getPhoneNumber() + " : " + etField3.getText().toString());
                     switch (messageType) {
                         case CONTACT_US:{
                             message.setTitle("تماس با ما");

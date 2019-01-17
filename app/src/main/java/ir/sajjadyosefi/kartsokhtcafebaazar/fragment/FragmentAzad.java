@@ -15,10 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.zarinpal.ewallets.purchase.OnCallbackRequestPaymentListener;
+import com.zarinpal.ewallets.purchase.OnCallbackVerificationPaymentListener;
 import com.zarinpal.ewallets.purchase.PaymentRequest;
 import com.zarinpal.ewallets.purchase.ZarinPal;
 import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 import ir.sajjadyosefi.kartsokhtcafebaazar.R;
+import ir.sajjadyosefi.kartsokhtcafebaazar.activity.ContainerActivity;
 import ir.sajjadyosefi.kartsokhtcafebaazar.activity.MainActivity;
 import ir.sajjadyosefi.kartsokhtcafebaazar.activity.ResultActivity;
 import ir.sajjadyosefi.kartsokhtcafebaazar.adapter.SpinnerAdapterA;
@@ -145,6 +147,54 @@ public class FragmentAzad extends Fragment {
 
             }
         });
+
+
+
+        Uri data = getActivity().getIntent().getData();
+        ZarinPal.getPurchase(mContext).verificationPayment(data, new OnCallbackVerificationPaymentListener() {
+            @Override
+            public void onCallbackResultVerificationPayment(boolean isPaymentSuccess, String refID, PaymentRequest paymentRequest) {
+                if (PBSjd != null)
+                    PBSjd.show();
+
+                if (button != null)
+                    button.setEnabled(false);
+
+                if (editText1Value != null) {
+                    if (editText1 != null) {
+                        editText1.setText(editText1Value);
+                    }
+                }
+
+
+                if (editTextXValue != null) {
+                    listView.setSelection(Integer.parseInt(editTextXValue));
+                }
+
+                if(isPaymentSuccess){
+                    error = false;
+
+                    if (goToVipValue){
+                        ((ContainerActivity)mContext).saveVip(true);
+                    }
+                    //payment ok
+                    //refID
+                    callService();
+                    //toast
+
+
+                }else {
+                    //not ok
+                    //refID
+                    error = true;
+
+                    PBSjd.hide();
+                    button.setEnabled(true);
+
+                }
+            }
+        });
+
 
         return view;
     }

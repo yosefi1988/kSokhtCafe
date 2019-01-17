@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import ir.sajjadyosefi.kartsokhtcafebaazar.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
+        Fabric.with(this, new Crashlytics());
+
         imageButton1 = findViewById(R.id.imageButton1);
         imageButton2 = findViewById(R.id.imageButton2);
         imageButton3 = findViewById(R.id.imageButton3);
@@ -73,10 +77,5 @@ public class MainActivity extends AppCompatActivity {
         return sharedPreferences.getBoolean(key,false);
     }
 
-    public static boolean saveVip(boolean isVip){
-        SharedPreferences sharedPreferences = mContext.getSharedPreferences("android.sajjadyosefi.ir.ksokht" , Context.MODE_PRIVATE);
-        String key = "android.sajjadyosefi.ir.ksokht";
-        return sharedPreferences.edit().putBoolean(key,isVip).commit();
-    }
 
 }

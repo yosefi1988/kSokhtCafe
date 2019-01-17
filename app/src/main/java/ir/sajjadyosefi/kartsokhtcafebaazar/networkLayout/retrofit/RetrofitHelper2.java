@@ -1,7 +1,8 @@
 package ir.sajjadyosefi.kartsokhtcafebaazar.networkLayout.retrofit;
 
 import android.content.Context;
-import ir.sajjadyosefi.kartsokhtcafebaazar.model.config.Configuration;
+import ir.sajjadyosefi.kartsokhtcafebaazar.model.
+        config.Configuration;
 import okhttp3.*;
 import retrofit2.Call;
 import retrofit2.Callback;

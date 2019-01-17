@@ -2,14 +2,14 @@ package ir.sajjadyosefi.kartsokhtcafebaazar.model.config;
 
 public class Configuration {
 
-    ConfigurationObject configuration = new ConfigurationObject();
+    ConfigurationObject configuration2 = new ConfigurationObject();
 
     public ConfigurationObject getConfiguration() {
-        return configuration;
+        return configuration2;
     }
 
     public void setConfiguration(ConfigurationObject configuration) {
-        this.configuration = configuration;
+        this.configuration2 = configuration;
     }
 
 }

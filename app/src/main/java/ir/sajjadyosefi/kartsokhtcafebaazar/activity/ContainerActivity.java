@@ -3,6 +3,7 @@ package ir.sajjadyosefi.kartsokhtcafebaazar.activity;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -54,5 +55,14 @@ public class ContainerActivity extends AppCompatActivity {
             ft.replace(R.id.output, fragmentDemo);
             ft.commit();
         }
+
+
     }
+
+    public static boolean saveVip(boolean isVip){
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences("android.sajjadyosefi.ir.ksokht" , Context.MODE_PRIVATE);
+        String key = "android.sajjadyosefi.ir.ksokht";
+        return sharedPreferences.edit().putBoolean(key,isVip).commit();
+    }
+
 }

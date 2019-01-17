@@ -14,12 +14,6 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" ></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
-                <category android:name="android.intent.category.BROWSABLE"></category>
-                <data android:scheme="return" android:host="zarinpalpayment"></data>
-            </intent-filter>
         </activity>
 
         <activity android:name=".activity.Splash_Screen">
@@ -35,8 +29,17 @@
         <activity
                 android:name=".activity.ContainerActivity"
                 android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" ></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:scheme="return" android:host="zarinpalpayment"></data>
+            </intent-filter>
         </activity>
-
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="199e61f8510baa682842bd5fdb6571573f252cd9"
+        />
 
     </application>
 

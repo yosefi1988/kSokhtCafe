@@ -53,47 +53,6 @@ public class RetrofitHelper {
             e.printStackTrace();
         }
     }
-//    private RetrofitHelper() {
-//        try {
-////          URL url = new URL("https://www.sb24.com");
-//            URL url = new URL(Url.REST_API_IP_ADDRESS);
-//            String serverHostname = url.getHost();
-//            HostSelectionInterceptor interceptor = new HostSelectionInterceptor();
-//
-//            Dispatcher dispatcher = new Dispatcher();
-//            dispatcher.setMaxRequests(1);
-//
-////            Interceptor interceptor = new Interceptor() {
-////                @Override
-////                public Response intercept(Chain chain) throws IOException {
-////                    SystemClock.sleep(1000);
-////                    return chain.proceed(chain.request());
-////                }
-////            };
-//
-//
-//            // OkHttp 3
-//            OkHttpClient client =
-//                    new OkHttpClient().newBuilder()
-//                            .sslSocketFactory(TrustKit.getInstance().getSSLSocketFactory(serverHostname),TrustKit.getInstance().getTrustManager(serverHostname))
-//                            .addInterceptor(interceptor)
-//                            .build();
-//
-//
-//            Retrofit retrofit = new Retrofit.Builder()
-//                    .baseUrl(REST_API_IP_ADDRESS)
-//                    .addConverterFactory(GsonConverterFactory.create())
-//                    .client(client)
-//                    .build();
-//
-//            service = retrofit.create(samaniumRestApi.class);
-//
-//            int a = 4 ;
-//            a++;
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
 
     public static RetrofitHelper getInstance(Context mContext) {
         if (retrofitHelper == null) {
