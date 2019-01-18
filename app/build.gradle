@@ -10,18 +10,47 @@ repositories {
 }
 android {
     compileSdkVersion 27
+    def versionname = "3.01"
+
     defaultConfig {
         applicationId "ir.sajjadyosefi.kartsokhtcafebaazar"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+//        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    productFlavors {
+        avvalMarket {
+            versionName "${versionname}"
+            versionNameSuffix "-a"
+        }
+        bazaar {
+            versionName "${versionname}"
+            versionNameSuffix "-b"
+            flavorDimensions "default"
+
+        }
+        myket {
+            versionName "${versionname}-m"
+        }
+        iranapps {
+            versionName "${versionname}-i"
+        }
+        jhobin {
+            versionName "${versionname}-j"
+        }
+        kandoo {
+            versionName "${versionname}"
+            versionNameSuffix "-k"
         }
     }
 }

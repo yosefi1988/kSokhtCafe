@@ -9,8 +9,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.PurchaseEvent;
 import io.fabric.sdk.android.Fabric;
 import ir.sajjadyosefi.kartsokhtcafebaazar.R;
+
+import java.math.BigDecimal;
+import java.util.Currency;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext = this;
         Fabric.with(this, new Crashlytics());
+
+//        Answers.getInstance().logPurchase(new PurchaseEvent());
+//        Answers.getInstance().logPurchase(new PurchaseEvent()
+//                .putItemPrice(BigDecimal.valueOf(13.50))
+//                .putCurrency(Currency.getInstance("USD"))
+//                .putItemName("Answers Shirt")
+//                .putItemType("Apparel")
+//                .putItemId("sku-350")
+//                .putSuccess(true));
+//            .putCustomAttribute("Custom String", "My String")
+//                .putCustomAttribute("Custom Number", 25));
+
 
         imageButton1 = findViewById(R.id.imageButton1);
         imageButton2 = findViewById(R.id.imageButton2);
