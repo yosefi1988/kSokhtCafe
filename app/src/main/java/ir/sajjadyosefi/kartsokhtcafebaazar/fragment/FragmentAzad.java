@@ -251,10 +251,10 @@ public class FragmentAzad extends Fragment {
 
         payment.setMerchantID("e8a913e8-f089-11e6-8dec-005056a205be");
         if (goToVip){
-            payment.setAmount(100);
+            payment.setAmount(500);
             goToVipValue = true ;
         }else {
-            payment.setAmount(100);
+            payment.setAmount(10500);
             goToVipValue = false;
         }
         payment.setDescription("هزینه استعلام کارت سوخت");

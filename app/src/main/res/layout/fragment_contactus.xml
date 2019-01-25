@@ -65,9 +65,19 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="شماره پشتیبانی 09227087288"
-                    android:textColor="#fff"
+                    android:text="ما تعدادی برنامه نویس هستیم که به صورت دورکاری مشغول انجام سفارش های نرم افزاری هستیم."
+                    android:textColor="#000000"
                     android:textSize="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:focusableInTouchMode="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="پشتیبانی-تلگرام 09227087288"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textDirection="rtl"
                     android:layout_marginBottom="20dp"
                     android:focusableInTouchMode="true" />
 
@@ -76,7 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="نوع ارتباط را انتخاب کنید:"
-                    android:textColor="#fff"
+                    android:textColor="#000000"
                     android:textSize="20dp"
                     android:focusableInTouchMode="true" />
 
@@ -152,7 +162,7 @@
                             android:foregroundGravity="right"
                             android:gravity="right"
                             android:text="پیشنهاد تغییرات و ویژگی جدید"
-                            android:textColor="#fff"  />
+                            android:textColor="#000000"  />
 
 
 
@@ -173,7 +183,7 @@
                             android:foregroundGravity="right"
                             android:gravity="right"
                             android:text="سفارش نرم افزار های اندرویدی"
-                            android:textColor="#fff"  />
+                            android:textColor="#000000"  />
                         <ir.sajjadyosefi.kartsokhtcafebaazar.view.PersianTextView
                             android:id="@+id/tvRadio2"
                             android:layout_width="wrap_content"
@@ -192,7 +202,7 @@
                             android:foregroundGravity="right"
                             android:gravity="right"
                             android:text="تماس با ما؛ انتقادات، پیشنهادات، شکایات"
-                            android:textColor="#fff"/>
+                            android:textColor="#000000"/>
 
                     </LinearLayout>
 
@@ -211,7 +221,7 @@
                     android:gravity="right"
                     android:padding="5dp"
                     android:text="@string/radio1Text"
-                    android:textColor="#fff"
+                    android:textColor="#000000"
                     android:textSize="17dp"
                     android:textStyle="bold" />
 
