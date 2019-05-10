@@ -105,43 +105,7 @@ public class FragmentAzad extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PBSjd.show();
-                button.setEnabled(false);
-                Global.retrofit2.config(new Callback<Configuration>() {
-                    @Override
-                    public void onResponse(Call<Configuration> call, Response<Configuration> response) {
-                        if (validData()) {
-                            editText1Value = editText1.getText().toString();
-                            editTextXValue = listView.getSelectedItemPosition() + "";
-                            if (error == false) {
-                                if ((MainActivity.isVip())){
-                                    callService();
-                                }else {
-                                    if (checkResult(response)) {
-                                        ShowSelectSturceDialog(mContext);
-                                    } else {
-                                        callService();
-                                    }
-                                }
-                            } else {
-                                callService();
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Configuration> call, Throwable t) {
-                        Toast.makeText(mContext,"عملیات با خطا مواجه شد",Toast.LENGTH_SHORT).show();
-                        Toast.makeText(mContext,"اینترنت خود را چک کنید",Toast.LENGTH_SHORT).show();
-                        //error = true;
-
-                        if (PBSjd != null)
-                            PBSjd.hide();
-
-                        if (button != null)
-                            button.setEnabled(true);
-                    }
-                });
+                CheckFilter();
 
 
 
@@ -186,7 +150,11 @@ public class FragmentAzad extends Fragment {
                 }else {
                     //not ok
                     //refID
-                    error = true;
+                    if (refID == null){
+
+                    }else {
+                        error = true;
+                    }
 
                     PBSjd.hide();
                     button.setEnabled(true);
@@ -245,16 +213,82 @@ public class FragmentAzad extends Fragment {
         }
     }
 
+
+    private void CheckFilter() {
+
+        Global.retrofit.callPelackservice("platesearch","1", "1","66" +  "03" + "25"  + "566" , new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.body().contains("خارج از کشور")) {
+                    Toast.makeText(mContext,"در صورتی که از فیلتر شکن استفاده می کنید آن را خاموش کنید.",Toast.LENGTH_SHORT).show();
+                }else {
+                    PBSjd.show();
+                    button.setEnabled(false);
+                    Global.retrofit2.config(new Callback<Configuration>() {
+                        @Override
+                        public void onResponse(Call<Configuration> call, Response<Configuration> response) {
+                            if (validData()) {
+                                editText1Value = editText1.getText().toString();
+                                editTextXValue = listView.getSelectedItemPosition() + "";
+                                if (error == false) {
+                                    if ((MainActivity.isVip())){
+                                        callService();
+                                    }else {
+                                        if (checkResult(response)) {
+                                            ShowSelectSturceDialog(mContext);
+                                        } else {
+                                            callService();
+                                        }
+                                    }
+                                } else {
+                                    callService();
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Configuration> call, Throwable t) {
+                            Toast.makeText(mContext,"عملیات با خطا مواجه شد",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext,"اینترنت خود را چک کنید",Toast.LENGTH_SHORT).show();
+                            //error = true;
+
+                            if (PBSjd != null)
+                                PBSjd.hide();
+
+                            if (button != null)
+                                button.setEnabled(true);
+                        }
+                    });
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+//                Toast.makeText(mContext,"عملیات با خطا مواجه شد",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext,"دوباره تلاش کنید",Toast.LENGTH_SHORT).show();
+//                error = true;
+//
+//                if (PBSjd != null)
+//                    PBSjd.hide();
+//
+//                if (button != null)
+//                    button.setEnabled(true);
+            }
+        });
+    }
+
+
     private void payment(boolean goToVip) {
         ZarinPal purches = ZarinPal.getPurchase(mContext);
         PaymentRequest payment = ZarinPal.getPaymentRequest();
 
         payment.setMerchantID("e8a913e8-f089-11e6-8dec-005056a205be");
         if (goToVip){
-            payment.setAmount(500);
+            payment.setAmount(10500);
             goToVipValue = true ;
         }else {
-            payment.setAmount(10500);
+            payment.setAmount(500);
             goToVipValue = false;
         }
         payment.setDescription("هزینه استعلام کارت سوخت");

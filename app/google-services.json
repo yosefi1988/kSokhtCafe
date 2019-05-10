@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "589979876026",
+    "firebase_url": "https://kart-sokht.firebaseio.com",
+    "project_id": "kart-sokht",
+    "storage_bucket": "kart-sokht.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589979876026:android:ade202bb8bbcdee5",
+        "android_client_info": {
+          "package_name": "ir.sajjadyosefi.kartsokhtcafebaazar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589979876026-u3er3nm19htipbp5gf3k5pu6vjnvkl0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfybVwHXd6dNUcUZVxycD72bq0TTCTm8Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

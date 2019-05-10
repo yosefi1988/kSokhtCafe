@@ -36,7 +36,7 @@ public class ResultActivity extends AppCompatActivity {
         });
         textView = (TextView) findViewById(R.id.textView);
 
-        if (result.contains("خارج از کشور")){
+        if (result != null && result.contains("خارج از کشور")){
             textView.setText("در صورتی که فیلتر شکن دارید آن را خاموش کنید");
 
             FragmentAzad.error = true;
